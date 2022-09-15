@@ -13,10 +13,6 @@ Typical solution for this it to disable scroll on body when fixed-positioned ove
 \
 This repo has some examples in reactjs using different solutions but none worked for me so far.
 
-### `npm start`
-
-Runs the app in the development and open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
 ## Recordings
 
 ### 1. Without body scroll lock
@@ -52,6 +48,10 @@ Demo: https://fixed-position-ios-scroll.vercel.app/
 
 ## Test this locally with your ios phone
 
+1. `npm install && npm start` and open [http://localhost:3000](http://localhost:3000)
+2. Generate a tunnel link for your localhost 3000 with one of two methods below
+
+
 ### Method 1:
 
 - Use [localtunnel](https://www.npmjs.com/package/localtunnel) using command below \
@@ -70,7 +70,7 @@ Demo: https://fixed-position-ios-scroll.vercel.app/
 
 
 
-### OS details
+## Device and OS details
 Iphone 13 pro \
 IOS version 15.1 \
 Safari browser 
