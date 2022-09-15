@@ -10,4 +10,19 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+    background-color: orange;
+}
+
+p{
+  margin: 0;
+  padding: 10px;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+a {
+  display: block;
+  margin-bottom: 10px;
 }

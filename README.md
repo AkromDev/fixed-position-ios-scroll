@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# IOS scroll bug with fixed positioned contents
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## _Proplem_
 
-## Available Scripts
+When we have overlay or modals which have position fixed, we should be able to scroll if content does not fit screen. And you scroll fixed positioned content, the body below the overlay should not scroll.
 
-In the project directory, you can run:
+## _Solution_
+
+Typical solution for this it to disable scroll on body when fixed-positioned overlay is opened. This solution works fine for desktops, androids but there seem to have some issues with getting it right with IOS safari.
+
+---
+
+\
+This repo has some examples in reactjs using different solutions but none worked for me so far.
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Runs the app in the development and open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Test this locally with your ios phone
 
-### `npm test`
+### Method 1:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Use [localtunnel](https://www.npmjs.com/package/localtunnel) using command below \
+  `npx localtunnel --port 3000`
+- Copy the generated link and paste it in your ios safari
 
-### `npm run build`
+> hot reloading did not work very well for me so I used `ngrok` instead
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Method 2:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Set up [ngrok](https://ngrok.com/) and access token on your machine
+- Generate tunnel link using `{PATH_TO_NGROK}/ngrok http 3000`
+- Copy the generated link and paste it in your ios safari
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+> `ngrok http 3000` if ngrok is located in current directtory
