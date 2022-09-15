@@ -17,6 +17,28 @@ This repo has some examples in reactjs using different solutions but none worked
 
 Runs the app in the development and open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
+## Recordings
+
+1. Without body scroll lock
+
+Notes to take from video.
+- I could reach to bottom close button because body kept scrolling
+- Before I open the overlay, body content was on topmost. But after closing, it was on bottommost
+
+2. Using `useLockBodyScroll` from [react-use](https://github.com/streamich/react-use)
+
+Notes to take from video recording
+- Scroll was locked for both body and overlay when overlay is opened but only body scroll should be locked
+
+3. Using `useLockBodyScroll` from [usehooks](https://usehooks.com/)
+
+Notes to take from video recording
+- I opened overlay from bottommost `open` button. So the body conent should stay here when I come back from overlay.
+- I was able to reach to the bottom of overlay (I could not reach in first example, when body scroll was not locked)
+- Despite body scroll lock, I was able to scroll body up after scrolling up overlay. As a result, I was seeing topmost body content instead of bottommost where I opened overlay.
+
+Conclusion, neither of 2 solutions above did not work as expected. 
+
 ## Test this locally with your ios phone
 
 ### Method 1:
