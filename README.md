@@ -19,22 +19,29 @@ Runs the app in the development and open [http://localhost:3000](http://localhos
 
 ## Recordings
 
-1. Without body scroll lock
+### 1. Without body scroll lock
+
+Video Link: https://www.loom.com/share/a067864da0d84f59bf12df936cce7183
 
 Notes to take from video.
-- I could reach to bottom close button because body kept scrolling
+- I could reach to bottom but could not click close button because body kept scrolling
 - Before I open the overlay, body content was on topmost. But after closing, it was on bottommost
 
-2. Using `useLockBodyScroll` from [react-use](https://github.com/streamich/react-use)
+### 2. Using `useLockBodyScroll` from [react-use](https://github.com/streamich/react-use)
+
+Video Link: https://www.loom.com/share/18d82e79e14944a897432c578ac4cbf0
 
 Notes to take from video recording
 - Scroll was locked for both body and overlay when overlay is opened but only body scroll should be locked
 
-3. Using `useLockBodyScroll` from [usehooks](https://usehooks.com/)
+### 3. Using `useLockBodyScroll` from [usehooks](https://usehooks.com/)
+
+Video Link: https://www.loom.com/share/f0872dcfd8c9431bac1e6f03adf0a3df
 
 Notes to take from video recording
 - I opened overlay from bottommost `open` button. So the body conent should stay here when I come back from overlay.
-- I was able to reach to the bottom of overlay (I could not reach in first example, when body scroll was not locked)
+- I was able to reach to the overlay bottom and click close button 
+> I could not click close button in first example, when body scroll was not locked)
 - Despite body scroll lock, I was able to scroll body up after scrolling up overlay. As a result, I was seeing topmost body content instead of bottommost where I opened overlay.
 
 Conclusion, neither of 2 solutions above did not work as expected. 
@@ -56,3 +63,10 @@ Conclusion, neither of 2 solutions above did not work as expected.
 - Copy the generated link and paste it in your ios safari
 
 > `ngrok http 3000` if ngrok is located in current directtory
+
+
+
+### OS details
+Iphone 13 pro \
+IOS version 15.1 \
+Safari browser \
