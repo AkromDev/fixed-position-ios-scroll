@@ -1,6 +1,6 @@
 # IOS scroll bug with fixed positioned contents
 
-## _Proplem_
+## _Problem_
 
 When we have overlay or modals which have position fixed, we should be able to scroll if content does not fit screen. And you scroll fixed positioned content, the body below the overlay should not scroll.
 
