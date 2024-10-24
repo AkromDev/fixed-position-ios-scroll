@@ -1,19 +1,8 @@
-import { useLayoutEffect, useState } from 'react';
+import { useState } from 'react';
 import { LoremIpsum } from './LoremIpsum';
+import { useLockBodyScroll } from "@uidotdev/usehooks";
 
 // https://usehooks.com/useLockBodyScroll/
-
-function useLockBodyScroll() {
-  useLayoutEffect(() => {
-    // Get original body overflow
-    const originalStyle = window.getComputedStyle(document.body).overflow;
-    // Prevent scrolling on mount
-    document.body.style.overflow = "hidden";
-    // Re-enable scrolling when component unmounts
-    return () => (document.body.style.overflow = originalStyle);
-  }, []); // Empty array ensures effect is only run on mount and unmount
-}
-
 
 export const BodyLockWithUseHooks = () => {
   const [open, setOpen] = useState(false);
@@ -25,6 +14,7 @@ export const BodyLockWithUseHooks = () => {
         <button onClick={() => setOpen((prev) => !prev)} className='open-button'>Open</button>
         <p style={{ minHeight: 300, background: 'aqua' }}>Block 1</p>
         <p style={{ minHeight: 300, background: 'yellow' }}>Block 2</p>
+        <button onClick={() => setOpen((prev) => !prev)} className='open-button'>Open</button>
         <p style={{ minHeight: 300, background: 'green' }}>Block 3</p>
         <p style={{ minHeight: 300, background: 'orange' }}>Block 4</p>
         <button onClick={() => setOpen((prev) => !prev)} className='open-button'>Open</button>
@@ -36,6 +26,7 @@ export const BodyLockWithUseHooks = () => {
 
 const FixedContent = ({ close }) => {
   useLockBodyScroll()
+
   return (
     <div
       style={{

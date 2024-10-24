@@ -1,13 +1,17 @@
 import { useState } from 'react';
-import { FixedContent } from './FixedContent';
+import { usePreventScroll } from 'react-aria';
+import { FixedContent } from './FixedContent'
 
-export const WithoutBodyScrollLock = () => {
+export const BodyLockWithReactAria = () => {
   const [open, setOpen] = useState(false);
+  usePreventScroll({
+    isDisabled: !open
+  })
 
   return (
     <>
       <div style={{ pointerEvents: open ? 'none' : 'unset' }}>
-        <h2>This example does not have body scroll lock</h2>
+        <h2>This example uses <code>usePreventScroll</code> from <code>react-aria</code></h2>
         <button onClick={() => setOpen((prev) => !prev)} className='open-button'>Open</button>
         <p style={{ minHeight: 300, marginBlock: 0, background: 'aqua' }}>Block 1</p>
         <p style={{ minHeight: 300, marginBlock: 0, background: 'yellow' }}>Block 2</p>
